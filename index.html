@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRCTC : Next Generation e-ticketing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+
+
+  
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="row1">
+                <img id="irlogo" src="images/lndianrailway_logo.png" alt="">
+                <img id="irctclogo" src="images/irctc_logo.png" alt="">
+                <ul>
+                    <li class="backgroundblue"><a href="" class="whitetext">LOGIN</a></li>
+                    <li><a href="#">REGISTER</a></li>
+                    <li><a href="#">AGENT LOGIN</a></li>
+                    <li><a href="#">CONTACT US</a></li>
+                    <li><a href="#">ASK DISHA</a></li>
+                    <li id="Alerts"><a href="#">ALERTS</a></li>
+                    <li id="currentdate"></li>
+                    <!-- scripts for data  -->
+                    <script>
+                        var d = new Date();
+                        document.getElementById("currentdate").innerHTML = d.toDateString();
+                       </script>
+                       <!-- scripts ended -->
+                    <li>A <sup>+</sup></li>
+                    <li>A</li>
+                    <li>A <sup>-</sup></li>
+                    <li>हिन्दी</li>
+                </ul>
+            </div>
+            <div class="row2">
+                <ul>
+                    <li><a id="homeicon" href="irctc_nav.html" class="fa fa-home"></a></li>
+                    <li class="backgroundblue"><a href="" class="whitetext">IRCTC EXCLUSIVE</a></li>
+                    <li><a href="#" id="train">TRAINS</a></li>
+                    <li><a href="#">BUSES</a></li>
+                    <li><a href="#">FLIGHTS</a></li>
+                    <li><a href="#">HOTELS</a></li>
+                    <li><a href="#">HOLIDAYS</a></li>
+                    <li><a href="#">LOYALITY</a></li>
+                    <li><a href="#">MEALS</a></li>
+                    <li><a href="#">PROMOTIONS</a></li>
+                    <li class="backgroundblue"><a href="" class="whitetext">PREMIUM PARTNER</a></li>
+                    <li><a href="#">MORE</a></li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+    <main>
+        <div class="Booking">
+
+
+            <div class="aboveform">
+
+                <button> <img src="images/pnr.png" alt=""> <span> PNR STATUS </span></button>
+
+                <button> <img src="images/charts.png" alt=""> <span> CHARTS / VACANCY </span></button>
+            </div>
+            <div class="form">
+                <form action="">
+                    <div id="container">
+                        <h1>QR Code Scanner</h1>
+                    
+                        <a id="btn-scan-qr">
+                            <img src="https://uploads.sitepoint.com/wp-content/uploads/2017/07/1499401426qr_icon.svg">
+                        <a/>
+                    
+                        <canvas hidden="" id="qr-canvas"></canvas>
+                    
+                        <div id="qr-result" hidden="">
+                            <b>Data:</b> <span id="outputData"></span>
+                        </div>
+                    </div>
+                    
+                    <script src="./src/qrCodeScanner.js"></script>
+
+                    <h1>BOOK TICKET</h1>
+
+
+
+                    <label for="from"><span class="icon"><i class="fa fa-location-arrow"></i> </span></label>
+                    <input list="station name" placeholder="From">
+                    <datalist id="station name">
+                        <option value="Mfp-muzaffarpur junction"></option>
+                        <option value="NDLS-New Delhi junction"></option>
+                        <option value="ANVT-Aanand Vihar Terminal"></option>
+                        <option value="PNB-Patna junction"></option>
+                        <option value="FRD- Faridabad junction"></option>
+                    </datalist>
+
+                    <label for="date"><span class="icon"><i class="fa fa-calendar"></i> </span></label>
+                    <input type="date" required>
+
+
+                    <p>
+                        <label for="to"><span class="icon"><i class="fa fa-map-marker"></i> </span></label>
+                        <input list="station name" placeholder="To">
+                        <datalist id="station name">
+                            <option value="Mfp-muzaffarpur junction"></option>
+                            <option value="NDLS-New Delhi junction"></option>
+                            <option value="ANVT-Aanand Vihar Terminal"></option>
+                            <option value="PNB-Patna junction"></option>
+                            <option value="FRD- Faridabad junction"></option>
+                        </datalist>
+
+                        <label for="class"><span class="icon"><i class="fa fa-briefcase"></i> </span></label>
+
+                        <select name="class">
+                            <option value="all">All Classes</option>
+                            <option value="sleeper">sleeper</option>
+                            <option value="general">general</option>
+                            <option value="AC">AC</option>
+                            <option value="2tier">AC 2 tier</option>
+                            <option value="3tier">AC 3 tier</option>
+                        </select>
+                    </p>
+                    <p>
+
+                        <label for="catogary"> <span class="icon"><i class="fa fa-th-large"></i> </span></label>
+
+                        <select name="catogary">
+                            <option value="all">Genneral</option>
+                            <option value="sleeper">Tatkal</option>
+
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox">Divyang Concession
+                        </label>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox">Flexible With Date
+                        </label>
+                        <br>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox"> Train With Available Berth
+                        </label>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox">Railway Pass Concession
+                        </label>
+
+
+                    </p>
+                    <button id="search" type="submit">Search </button>
+
+                </form>
+            </div>
+            <div id="text">
+                <p id="indian">INDIAN RAILWAYS</p>
+                <p id="link"><a href="">Safety </a> <a href="">Security</a> <a href="">Punctuality</a></p>
+            </div>
+<!--             <div id="belowform">
+                <p>Automatic full refund in case of train cancellation by indain railway </p>
+                <p>No need to cancel such ticekets.</p>
+            </div> -->
+        </div>
+
+        <div class="others">
+            <p id="heading">Have you not found the right one? <br>
+                Find a service suitable for you here.</p>
+            <ul>
+                <li class="roundedicon"><img src="images/flight icon.jpg" alt="">
+                    <p>flights</p>
+                </li>
+
+                <li class="roundedicon"><img src="images/hotel icon.jpg " alt="">
+                    <p>Hotels</p>
+                </li>
+                <li><span class="fa fa-line-chart"></span>
+                    <p>Rail Drishti</p>
+                </li>
+                <li class="roundedicon"><img src="images/catering.png" alt="">
+                    <p>E-catering</p>
+                </li>
+                <li class="roundedicon"><img src="images/tourist train.png" alt="">
+                    <p>Tourist train</p>
+                </li>
+
+            </ul>
+
+            <ul>
+                <li class="roundedicon"><img src="images/charter train.png" alt="">
+                    <p>Charter train</p>
+                </li>
+                <li class="roundedicon"><img src="images/hill.png" alt="">
+                    <p> Hill Railways</p>
+                </li>
+
+                <li class="roundedicon"><img src="images/gallery.png" alt="">
+                    <p>Image gallery</p>
+                </li>
+                <li class="roundedicon"><img src="images/holiday.png" alt="">
+                    <p>Holiday package</p>
+                </li>
+                <li class="roundedicon"><img src="images/catering.png" alt="">
+                    <p>E-catering</p>
+                </li>
+
+        </div>
+
+        <h1>INDIAN RAILWAY :- Schemes and Programs with latest news</h1>
+        <ul><pre><a style="color:#000000" ,href="https://studywrap.com/ministry-of-railways-schemes-and-programs-new-trains-coaches-dedicated-freight-corridor-vikalp-avataran-mission-satyanishtha-etc/">                                            &#x2022; INDIAN RAILWAY-Schemes and Programs<br></a></pre> 
+       <pre><a style="color:#000000", href="https://economictimes.indiatimes.com/topic/railway-schemes">                                            &#x2022; INDIAN RAILWAY-news<br></a></pre></ul>
+
+        <div class="Holidays">
+            <h1>HOLIDAYS</h1>
+            <div class="colum">
+                <div class="packages">
+                    <img src="images/maharaja express.jpg" alt="">
+                    <h2>Maharaja's Express</h2>
+                    <p>Redefining Royalty, Luxury and Comfort, Maharaja’s express takes you on a sojourn to the era of
+                        bygone stately splendour of princely states. Sylvan furnishings, elegant ambience and modern
+                        amenities are amalgamated for an “Experience Unsurpassed”. It has been a winner of “World’s
+                        Leading Luxury train” by World Travel Awards consecutively for last six years.</p>
+                </div>
+                <div class="packages">
+                    <img src="images/international packages.jpg" alt="">
+                    <h2>International packages</h2>
+                    <p>Best deals in International Holiday packages, handpicked by IRCTC, for Thailand, Dubai, Sri
+                        Lanka, Hong Kong, China, Macau, Bhutan, Nepal, U.K., Europe, USA, Australia etc. The packages
+                        are inclusive of sightseeing, meals, visa charges and overseas medical insurance to give you a
+                        hassle-free and memorable experience.</p>
+                </div>
+                <div class="packages">
+                    <img src="images/Domestic Air packages.jpg" alt="">
+                    <h2>Domestic Air packages</h2>
+                    <p>Be it the spiritual devotee seeking blessings of Tirupati, Shirdi or Mata Vaishno Devi or the
+                        leisure traveller wanting to relish the Blue mountains of North East, Sand-dunes of Rajasthan,
+                        Hamlets of Ladakh, Wonders of Himalayas, Serene lakes or Picturesque Islands, IRCTC has it all.
+                        Discover India through IRCTC!</p>
+                </div>
+            </div>
+            <div class="colum">
+                <div class="packages">
+                    <img src="images/Buddhist.jpg" alt="">
+                    <h2>Bhuddhist Circuit Tourist Train</h2>
+                    <p>India, the country where Buddhism originated has rich memories of the Buddhist legacy. As part of
+                        its drive towards austerity, the only kind of art & architecture that it supported were Stupas,
+                        Chaityas & Viharas. Buddhist Train India will help you visit all these places up close for a
+                        truly religious experience.</p>
+                </div>
+                <div class="packages">
+                    <img src="images/Railtour package.jpg" alt="">
+                    <h2>Rail Tour packages</h2>
+                    <p>IRCTC offers Exclusive Rail tour packages with confirmed train tickets, sight-seeing and meals
+                        for enchanting Nilgiri Mountains, Darjeeling, Kullu Manali, Kashmir, Gangtok or divine tours of
+                        Mata Vaishno Devi, Rameswaram, Madurai, Shirdi, Tirupati etc. Holiday packages/ Land packages to
+                        these destinations are also available..</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <div class="socialmedia">
+            <p>Get Connected With Us On Social Networks</p>
+            <ul>
+                <li > <img src="images/facebook.png" alt=""></li>
+                <li > <img src="images/youtube.jfif" alt=""></li>
+                <li ><img src="images/ista.jfif" alt=""></li>
+                <li ><img src="images/twit.png" alt=""></li>
+                <li ><img src="images/linkdin.png" alt=""></li>
+                <li ><img src="images/telegram.png" alt=""></li>
+                <li ><img src="images/peardeck.png" alt=""></li>
+            </ul>
+
+        </div>
+        <div class="footer">
+            <div>
+                <ul>
+                    <li>IRCTC Trains</li>
+                    <li>Genneral Information</li>
+                    <li>Important Information</li>
+                    <li>Agents </li>
+                    <li>Enquiry</li>
+
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li>How To</li>
+                    <li>IRCTC Official App</li>
+                    <li>Advertise with us</li>
+                    <li>Refund Rules </li>
+                    <li>Divyang Facilities</li>
+
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li>IRCTC eWallet</li>
+                    <li>IRCTC Loyality Program</li>
+                    <li>About us</li>
+                    <li>IRCTC Zone </li>
+                 
+
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li>For Newly Migrated Agents</li>
+                    <li>Mobile Zone</li>
+                    <li>Integration Policy</li>
+           
+
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
